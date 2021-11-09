@@ -1,0 +1,115 @@
+.post-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+ background-color: rgba(101, 121, 122, 0.397);
+ width: 100vw;
+ height: 100vh;
+ z-index: 10;
+ textarea{
+   resize: none;
+ }
+}
+.single-post{
+  background-color: #c6b3ca;
+}
+.posts-main{
+  height:75vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.post{
+  width: 50%;
+  max-width: 700px;
+  min-width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  background-color: rgb(27, 51, 87);
+  transform: translate(-50%);
+
+}
+
+
+.post-label{
+  transition: all 100ms;
+}
+.single-post:nth-child(even){
+  margin-left: auto;
+}
+.posts-main__create-block{
+  position: sticky;
+  top: 0;
+  
+}
+
+
+
+
+@keyframes showPostsE {
+  0%{
+    transform: translateX(-1500px) scale(0);
+    opacity: 0;
+
+  }
+  80%{
+    transform: translateX(200px) scale(1);
+
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes showPostsO {
+  0%{
+    transform: translateX(2500px) scale(0);
+    opacity: 0;
+  }
+  80%{
+    transform: translateX(-200px) scale(1);
+
+  }
+ 100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.post-enter-active:nth-child(even) {
+ animation: showPostsE 1000ms ease-in-out forwards;
+}
+.post-enter-active:nth-child(odd) {
+ animation: showPostsO 1000ms ease-in-out forwards;
+}
+.post-exit-active:nth-child(odd) {
+  animation: showPostsO 1000ms ease-in-out reverse forwards;
+ }
+.post-exit-active:nth-child(even) {
+  animation: showPostsE 1000ms ease-in-out reverse forwards;
+ }
+
+.create-post-enter{
+  opacity: 0;
+}
+.create-post-enter-active{
+  opacity: 1;
+  transition: all 500ms;
+}
+.create-post-exit{
+  opacity: 1;
+
+}
+.create-post-exit-active{
+  opacity: 0;
+  transition: all 500ms;
+}
+::-webkit-scrollbar{
+  width: 15px;
+  border-radius:4px;
+  box-shadow:  inset 1px 1px 15px rgba(82, 82, 82, 0.678) ;
+}
+::-webkit-scrollbar-thumb{
+  background-color:lighten($color: #fd7e14, $amount: 10);
+  border-radius: 4px;
+}

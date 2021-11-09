@@ -1,0 +1,40 @@
+
+.page {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  // transition: all .5s;
+}
+
+
+.page-enter-active {
+ animation: app-in 500ms ease-in-out forwards;
+}
+
+
+.page-exit-active {
+  animation: app-out 500ms ease-in-out forwards;
+}
+.page-enter-done{
+  // position: static;
+}
+@keyframes app-in{
+  from{
+    opacity: 0;
+    transform: translateX(-1500px);
+  }
+  to{
+    opacity: 1;
+    transform:translateX(0);
+  }
+}
+@keyframes app-out{
+  from{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to{
+    opacity: 0;
+    transform:translateX(1500px);
+  }
+}
